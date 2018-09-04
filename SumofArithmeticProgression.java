@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class Prime {
+public class SumofArithmeticProgression {
 
     public static void main(String[] args) {
      
