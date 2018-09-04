@@ -1,16 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package prime;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- *
- * @author MSAJCE-CSE31
- */
+
 public class MaximumElement {
     public static void main(String[] args){
         try{
