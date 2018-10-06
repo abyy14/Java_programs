@@ -1,27 +1,40 @@
+// Java program to Convert characters  
+// of a string to opposite case
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+ 
+class uppe_lower{ 
+     
+     static void convertOpposite(StringBuffer str) 
+     { 
+        int ln = str.length(); 
+             
+        for (int i=0; i<ln; i++) 
+        { 
+            Character c = str.charAt(i); 
+            if (Character.isLowerCase(c)) 
+                str.replace(i, i+1, Character.toUpperCase(c)+""); 
+            else
+                str.replace(i, i+1, Character.toLowerCase(c)+""); 
+             
+        } 
+      
 
-public class uppe_lower {
+     }
 
     
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        	Scanner s=new Scanner(System.in);
-		String str=s.next();
-                char[] arr=str.toCharArray();
-                for(int i=0;i<=arr.length-1;i++){
-                    
-                       if (Character.isUpperCase(arr[i])){
-                          arr[i]=Character.toLowerCase(arr[i]);
-                       }
-                       else {
-                        arr[i]=   Character.toUpperCase(arr[i]);
-                       }
-                       System.out.print(arr[i]);
-		}
-                 }
-}    
+     
+        Scanner s=new Scanner(System.in);
+        StringBuffer str = new StringBuffer();
+        str.append(s.nextLine());
+         // Calling the Method 
+         convertOpposite(str); 
+           
+         System.out.println(str); 
+        }
+}
+ 
 
