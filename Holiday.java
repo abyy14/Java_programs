@@ -1,35 +1,59 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package calculation;
-
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-/**
- *
- * @author Sarala
- */
-public class Holiday {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner s= new Scanner(System.in);
-        String str=s.nextLine();
-        if(str=="Saturday"||str=="Sunday"){
-           System.out.print("yes");
-           // System.out.println(arr[i]);
-                    
-        }else{
-            System.out.print("no");
+import java.util.Map;
+import java.util.Scanner;
+import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
+public class Holiday
+{
+	static String[] holiday = new String[]{"Saturday", "Sunday"};
+	static String[] workingday = new String[]{"Monday","Tuesday","Wednesday","Thursday","Friday"};	
+	
+	static String casing(String str)
+    {
+        int slength=str.length();
+        int i=0;
+        char[] tempString= str.toCharArray();
+        String CamelCased;
+        while(i<slength)
+        {        	
+        	if(i==0)
+        	{
+        		tempString[i] = Character.toUpperCase(tempString[i]);
+        		i++;
+        	}
+        	else
+        	{        		
+        		tempString[i] = Character.toLowerCase(tempString[i]);  
+        		i++;
+        	}
+        	
         }
-        
-        
+        CamelCased = new String(tempString);             
+        return CamelCased;
     }
-    
+   static String checkday(String str1)
+    {
+	   String str=casing(str1);
+       for(String s: holiday)
+       {
+    	   if(str.equals(s))
+    		   return "yes";
+       }
+       for(String s:workingday)
+       {
+    	   if(str.equals(s))
+    		   return "no";
+       }
+       return "Enter valid day";
+    }
+    public static void main (String[] args) 
+    {
+    	//System.out.println("Please enter a day");
+    	Scanner sn = new Scanner(System.in);
+    	String day = sn.nextLine();
+        String res = checkday(day);         
+        System.out.println(res);
+     
+
+    }
 }
